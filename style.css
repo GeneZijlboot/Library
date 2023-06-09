@@ -1,4 +1,25 @@
-.test{
-    color: white;
-    background-color: green;
+body{
+    margin: 0px;
+    font-family: Arial;
+    font-size: 20px;
+    color:white;
+    background-color: rgb(104, 103, 103);
+}
+
+.HiddenForm{
+    visibility: visible; /*very importend --> when clicking button let this div appear!*/
+    margin: 0 auto;
+    width: 210px;
+    justify-content: center;
+    margin-top: 10%;
+    background-color: rgb(66, 132, 212);
+    border: 1px rgb(66, 132, 212) solid;
+    box-shadow: 5px 5px 12px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    padding: 10px;
+}
+
+p, input, label{
+    padding: 10px;
+    margin: 10px;
 }
