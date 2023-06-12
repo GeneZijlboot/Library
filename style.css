@@ -5,6 +5,7 @@ body{
     background-color: rgb(104, 103, 103);
 }
 
+<<<<<<< HEAD
 .Container{
     position: relative;
 
@@ -51,6 +52,22 @@ button{
 }
 
 .text, input, label{
+=======
+.HiddenForm{
+    visibility: visible; /*very importend --> when clicking button let this div appear!*/
+    margin: 0 auto;
+    width: 280px;
+    justify-content: center;
+    margin-top: 10%;
+    background-color: rgb(66, 132, 212);
+    border: 1px rgb(66, 132, 212) solid;
+    box-shadow: 5px 5px 12px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+p, input, label{
+>>>>>>> 0fa7eaebd4d948e516fa10349232c4db21de6e8f
     font-size: 20px;
     padding: 10px;
     margin: 10px;
