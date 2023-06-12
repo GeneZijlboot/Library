@@ -6,21 +6,34 @@
         <link rel="stylesheet" href="style.css">
     </head>
      <body>
-        <div class="HiddenForm">
-            <form>
-                <p>New Book</p>
-                <br>
-                <input type="name" id="Title" name="Title" placeholder="Title" required>
-                <br>
-                <input type="name" id="author" name="author" placeholder="Author" required>
-                <br>
-                <input type="name" id="Pages" name="Pages" placeholder="Pages" required>
-                <br>
-                <label for="Read">Read </label>
-                <input type="checkbox" id="Read" name="Read">
-                <br>
-                <input type="submit">
-            </form>
+        <div class="Container">
+            <div class="Library">
+                <p style="font-size: 30px; margin-top: 10px;">You're Online Library!</p>
+                <button onclick="AppearBaby()">Add Book</button>
+                <table>
+                    <tr>
+                        <td>Title</td>
+                        <td>Author</td>
+                        <td>Pages</td>
+                        <td>Read</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="HiddenForm">
+                <form>
+                    <p class="text" style="font-size: 30px;">New Book</p>
+                    <input type="name" id="Title" name="Title" placeholder="Title" required>
+                    <br>
+                    <input type="name" id="author" name="author" placeholder="Author" required>
+                    <br>
+                    <input type="name" id="Pages" name="Pages" placeholder="Pages" required>
+                    <br>
+                    <label for="Read">Read </label>
+                    <input style="cursor: pointer;" type="checkbox" id="Read" name="Read">
+                    <br>
+                    <input style="cursor: pointer;" type="submit">
+                </form>
+            </div>
         </div>
         <script src="script.js"></script>
     </body>
