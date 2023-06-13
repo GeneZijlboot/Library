@@ -1,5 +1,24 @@
-const theHobbit = new Books('The Hobbit', 'J.R.R. Tolkien', '295 pages', 'not read yet');
-//so! use 'new' to put in the values in the object of you're choise! 
+const HiddenForm = document.querySelector('.HiddenForm'); //werkt
+const Library = document.querySelector('.Library'); //werkt
+
+function LibraryDisappear(){
+    console.log("aardappel");
+}
+
+function SubmitBookDissapear(){
+    console.log("aardappel");
+    const Title =  document.getElementById('Title');
+    const author = document.getElementById('author');
+    const Pages = document.getElementById('Pages');
+    const Read = document.getElementById('Read');
+    console.log(Title.value + " this the title b");
+    console.log(author.value + " this the author b");
+    console.log(Pages.value + " this the Pages b");
+    console.log(Read.value + " this the Read  b");
+}
+/*
+
+const AddBook = new Books(Title.value, author.value, Pages.value, Read.value); 
 
 function Books(title, author, pages, read) {
     this.title = title
@@ -7,8 +26,14 @@ function Books(title, author, pages, read) {
     this.pages = pages
     this.read = read
     this.info = function(){
-        return title + ' by ' + author + ', ' + pages + ', '+ read;
+        const show = document.querySelector('show');
+        const Row1 = document.createElement('tr');
+
+        //push the information here to a new table-row
+        //return title + ' by ' + author + ', ' + pages + ', '+ read;
     }
 }
 
-console.log(theHobbit.info()); // logs "The Hobbit by J.R.R. Tolkien, 295 pages, not read yet"
+console.log(Book1.info()); // logs "The Hobbit by J.R.R. Tolkien, 295 pages, not read yet"
+
+*/
