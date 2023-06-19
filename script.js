@@ -3,7 +3,7 @@ const Title = document.getElementById('Title');
 const author = document.getElementById('author');
 const Pages = document.getElementById('Pages');
 const Library = document.getElementById('Library');
-const SubmitBook = document.getElementById('SubmitBook');
+const AddBookButton = document.getElementById('AddBookButton');
 
 const theHobbit = new Books('The Hobbit', 'J.R.R. Tolkien', '295 pages', 'not read yet');
 console.log(theHobbit.info()); // logs "The Hobbit by J.R.R. Tolkien, 295 pages, not read yet"
@@ -21,9 +21,10 @@ function Books(title, author, pages, read) {
 
 //adding a book to the object
 function AddBook(){
-    SubmitBook.addEventListener('click', () => {
+    AddBookButton.addEventListener('click', () => {
         document.getElementById('HiddenForm').style.visibility = 'visible';
         document.getElementById('Library').style.visibility = 'hidden';
+        ResetValues();
     });
 
     form.addEventListener('submit', (e) => {
@@ -31,7 +32,7 @@ function AddBook(){
         const myFormData =  new FormData(e.target);
 
         const myLibrary = Object.fromEntries(myFormData.entries());
-        console.log(myLibrary.Title);
+        console.log(myLibrary);
 
         document.getElementById('HiddenForm').style.visibility = 'hidden';
         document.getElementById('Library').style.visibility = 'visible';
@@ -39,3 +40,10 @@ function AddBook(){
 }
 
 AddBook();
+
+//resets the input values so it looks cleaner when adding a new book!
+function ResetValues(){
+    Title.value = '';
+    author.value = '';
+    Pages.value = '';
+}

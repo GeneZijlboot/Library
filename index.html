@@ -9,7 +9,7 @@
         <div class="Container">
             <div id="Library">
                 <p style="font-size: 30px; margin-top: 10px;">You're Online Library!</p>
-                <button id="SubmitBook">Add Book</button>
+                <button id="AddBookButton">Add Book</button>
                 <table class="show">
                     <tr>
                         <td>Title</td>
@@ -26,10 +26,11 @@
                     <br>
                     <input type="text" id="author" name="author" placeholder="Author" required>
                     <br>
-                    <input type="text" id="Pages" name="Pages" placeholder="Pages" required>
+                    <input type="number" id="Pages" name="Pages" min="0" placeholder="Pages">
                     <br>
                     <label for="Read">Read </label>
-                    <input style="cursor: pointer;" type="checkbox" id="Read" name="Read">
+                    <input type="radio" style="accent-color: green; cursor: pointer;" id="Read" name="Read" value="yes">
+                    <input type="radio" style="accent-color: red; cursor: pointer;" id="Read" name="Read" value="no" checked>
                     <br>
                     <input style="cursor: pointer;" type="submit">
                 </form>
