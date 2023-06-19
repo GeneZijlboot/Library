@@ -7,9 +7,9 @@
     </head>
      <body>
         <div class="Container">
-            <div class="Library">
+            <div id="Library">
                 <p style="font-size: 30px; margin-top: 10px;">You're Online Library!</p>
-                <button class="SubmitBook" onclick="LibraryDisappear()">Add Book</button>
+                <button id="SubmitBook">Add Book</button>
                 <table class="show">
                     <tr>
                         <td>Title</td>
@@ -17,10 +17,9 @@
                         <td>Pages</td>
                         <td>Read</td>
                     </tr>
-
                 </table>
             </div>
-            <div class="HiddenForm">
+            <div id="HiddenForm">
                 <form>
                     <p class="text" style="font-size: 30px;">New Book</p>
                     <input type="text" id="Title" name="Title" placeholder="Title" required>
@@ -32,7 +31,7 @@
                     <label for="Read">Read </label>
                     <input style="cursor: pointer;" type="checkbox" id="Read" name="Read">
                     <br>
-                    <input style="cursor: pointer;" onclick="SubmitBookDissapear()" type="submit">
+                    <input style="cursor: pointer;" type="submit">
                 </form>
             </div>
         </div>

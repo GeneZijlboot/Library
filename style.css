@@ -10,7 +10,7 @@ body{
 
 }
 
-.Library{
+#Library{
     background-color: rgb(66, 132, 212);
     position: absolute;
     visibility: visible;
@@ -36,17 +36,17 @@ button{
 
 
 
-.HiddenForm{
-    visibility: visible; /*very importend --> when clicking button let this div appear!*/
+#HiddenForm{
+    visibility: hidden; /*very importend --> when clicking button let this div appear!*/
     width: 280px;
     background-color: rgb(66, 132, 212);
     border-radius: 15px;
     border: 1px rgb(66, 132, 212) solid;
     box-shadow: 5px 5px 12px rgba(0,0,0,0.5);
     padding: 20px;
-    /*z-index: 9;*/
+    z-index: 9;
     margin: 0;
-    /*margin-left: 40%;*/
+    margin-left: 40%;
     margin-top: 10%;
 }
 
