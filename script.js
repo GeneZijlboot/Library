@@ -1,49 +1,68 @@
-const form = document.querySelector('form');
-const Title = document.getElementById('Title');
-const author = document.getElementById('author');
-const Pages = document.getElementById('Pages');
-const Library = document.getElementById('Library');
-const AddBookButton = document.getElementById('AddBookButton');
+let myLibrary = [];
 
-const theHobbit = new Books('The Hobbit', 'J.R.R. Tolkien', '295 pages', 'not read yet');
-console.log(theHobbit.info()); // logs "The Hobbit by J.R.R. Tolkien, 295 pages, not read yet"
+function Book(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+}
 
-//constructor object
-function Books(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-    this.info = function(){
-        return title + ' by ' + author + ', ' + pages + ', '+ read;
+Book.prototype.toggleRead = function() {
+    this.read = !this.read;
+}
+function toggleRead(index){
+    myLibrary[index].toggleRead();
+    render();
+}
+
+function render(){
+    const AddingRowWithDom = document.getElementById('AddingRowWithDom');
+    AddingRowWithDom.innerHTML = "";
+    for(let i = 0; i < myLibrary.length; i++){
+        let book = myLibrary[i];
+        let bookEl = document.createElement("div");
+        bookEl.innerHTML = `
+        <div class="NewBooks">
+            <div class="A">
+                <p class="info">${book.title}</p><p class="info">${book.author}</p><p class="info">${book.pages}</p><p class="info">${book.read}</p>
+            </div>
+            <div class="B">
+                <button id="btn" onclick="removeBook(${i})">Remove</button><button id="btn" onclick="toggleRead(${i})">Toggle Read</button>
+            </div>
+        </div>
+        `;
+        AddingRowWithDom.appendChild(bookEl);
     }
 }
 
-//adding a book to the object
-function AddBook(){
-    AddBookButton.addEventListener('click', () => {
-        document.getElementById('HiddenForm').style.visibility = 'visible';
-        document.getElementById('Library').style.visibility = 'hidden';
-        ResetValues();
-    });
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const myFormData =  new FormData(e.target);
-
-        const myLibrary = Object.fromEntries(myFormData.entries());
-        console.log(myLibrary);
-
-        document.getElementById('HiddenForm').style.visibility = 'hidden';
-        document.getElementById('Library').style.visibility = 'visible';
-    });
+function removeBook(index){
+    myLibrary.splice(index, 1);
+    render();
 }
 
-AddBook();
+function addBookToLibrary() {
+    let title = document.getElementById('Title').value;
+    let author = document.getElementById('author').value;
+    let pages = document.getElementById('Pages').value;
+    let read = document.getElementById('read').checked;
+    let newBook = new Book(title, author, pages, read);
+    myLibrary.push(newBook);
+    render();
+} 
 
-//resets the input values so it looks cleaner when adding a new book!
-function ResetValues(){
-    Title.value = '';
-    author.value = '';
-    Pages.value = '';
-}
+const AddBookButton = document.getElementById('AddBookButton');
+const Library = document.getElementById('Library');
+const HiddenForm = document.getElementById('HiddenForm');
+const form = document.querySelector('form');
+
+form.addEventListener('submit', (e) => {
+    Library.style.visibility = "visible";
+    HiddenForm.style.visibility = "hidden";
+    e.preventDefault();
+    addBookToLibrary();
+});
+
+AddBookButton.addEventListener('click', () => {
+    Library.style.visibility = "hidden";
+    HiddenForm.style.visibility = "visible";
+});

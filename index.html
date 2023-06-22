@@ -8,16 +8,21 @@
      <body>
         <div class="Container">
             <div id="Library">
-                <p style="font-size: 30px; margin-top: 10px;">You're Online Library!</p>
-                <button id="AddBookButton">Add Book</button>
-                <table class="show">
-                    <tr>
-                        <td>Title</td>
-                        <td>Author</td>
-                        <td>Pages</td>
-                        <td>Read</td>
-                    </tr>
-                </table>
+                <div class="upperlayer">
+                    <p style="font-size: 30px; margin-top: 10px;">You're Online Library!</p>
+                    <button id="AddBookButton">Add Book</button>
+                </div>
+                <div>
+                    <div class="books">
+                        <p class="info">Title</p>
+                        <p class="info">Author</p>
+                        <p class="info">Pages</p>
+                        <p class="info">Read</p>
+                    </div>
+                    <div id="AddingRowWithDom">
+                        
+                    </div>
+                </div>
             </div>
             <div id="HiddenForm">
                 <form>
@@ -26,11 +31,15 @@
                     <br>
                     <input type="text" id="author" name="author" placeholder="Author" required>
                     <br>
-                    <input type="number" id="Pages" name="Pages" min="0" placeholder="Pages">
+                    <input type="number" id="Pages" name="Pages" min="0" placeholder="Pages" required>
                     <br>
-                    <label for="Read">Read </label>
-                    <input type="radio" style="accent-color: green; cursor: pointer;" id="Read" name="Read" value="yes">
-                    <input type="radio" style="accent-color: red; cursor: pointer;" id="Read" name="Read" value="no" checked>
+                    <label for="read">read</label>
+                    <input type="checkbox" id="read" name="read">
+                    <!--
+                    <label>Read</label>
+                    <input type="radio" style="accent-color: green; cursor: pointer;" id="yes" name="Read" value="yes">
+                    <input type="radio" style="accent-color: red; cursor: pointer;" id="no" name="Read" value="no" checked>
+                    -->
                     <br>
                     <input style="cursor: pointer;" type="submit">
                 </form>
