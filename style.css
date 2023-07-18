@@ -1,3 +1,9 @@
+/*for google chrome*/
+
+::-webkit-scrollbar {
+    display: none;
+}
+
 body{
     font-family: Arial;
     color:white;
