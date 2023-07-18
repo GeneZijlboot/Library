@@ -25,10 +25,13 @@ body{
     position: absolute;
     visibility: visible;
     width: 950px;
+    max-height: 400px;
     padding: 20px;
     border-radius: 30px;
     box-shadow: 5px 5px 12px rgba(0,0,0,0.5);
     margin-left: 20%;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 .upperlayer{
     display: grid;
